@@ -1,0 +1,24 @@
+mfgen.pl - a Perl script to generate makefiles to encode audio to different formats.
+(C)2006-2011, Dan Ponte <amigan@gmail.com>
+
+Rationale:
+Generating makefiles allows you to use make -j, which allows you to utilize multiple CPUs in an SMP configuration to
+encode more than one file at once.
+
+Help:
+
+usage: mfgen.pl [-hmMOR] [-y year] [-g genre] [-A artist] [-L album] [-d disc#] [-p path]
+
+	-h		: this help
+	-m		: album is part multi disc set (writes disc in filename)
+	-y year		: set year for album
+	-g genre	: set genre for album
+	-A artist	: set artist for album
+	-L album	: set title of album
+	-d disc#	: set disc number (default 1)
+	-p path		: path prefix (where to put output files)
+	-M		: generate MP3s (must be used with -O for MP3 and vorbis)
+	-O		: generate Ogg Vorbis
+	-F		: generate FLAC (must be used with -O for FLAC and vorbis, or -M)
+	-R		: Rename (actually copy) and tag MP3 (see above notes)
+
